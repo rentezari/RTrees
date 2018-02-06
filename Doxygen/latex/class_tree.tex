@@ -1,0 +1,866 @@
+\hypertarget{class_tree}{}\section{Tree$<$ Node, default\+\_\+cond, condition\+\_\+type $>$ Class Template Reference}
+\label{class_tree}\index{Tree$<$ Node, default\+\_\+cond, condition\+\_\+type $>$@{Tree$<$ Node, default\+\_\+cond, condition\+\_\+type $>$}}
+
+
+\hyperlink{class_tree}{Tree} class\+: Class containing tree root and functions for modification and generation of tree.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\+hpp$>$}
+
+
+
+Collaboration diagram for Tree$<$ Node, default\+\_\+cond, condition\+\_\+type $>$\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tree_a32a2cac7d7a95d1d549d528cc088660c}{Tree} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{_tree_8cpp}{Tree.\+cpp}. \end{DoxyCompactList}\item 
+\hyperlink{class_tree_aa4d8eec83dea9da55071cdf181078119}{$\sim$\+Tree} ()
+\item 
+void \hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add} (condition\+\_\+type condition)
+\begin{DoxyCompactList}\small\item\em \hyperlink{add_8cpp}{add.\+cpp} \end{DoxyCompactList}\item 
+void \hyperlink{class_tree_a7c4512f8790d44351b07ed31491fd5e5}{add} (condition\+\_\+type condition, \hyperlink{struct_node}{Node} $\ast$node)
+\item 
+void \hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print} ()
+\item 
+void \hyperlink{class_tree_aeef6af51b2097d5e61335005568835d1}{print} (\hyperlink{struct_node}{Node} $\ast$node)
+\item 
+void \hyperlink{class_tree_a21f8cfc7ca1e7bd8fe8c33c94240449f}{set\+\_\+print\+\_\+precision} (unsigned int \+\_\+\+N\+\_\+digits\+\_\+printed)
+\begin{DoxyCompactList}\small\item\em \hyperlink{print_8cpp}{print.\+cpp} \end{DoxyCompactList}\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find} (condition\+\_\+type value)
+\item 
+void \hyperlink{class_tree_ab05cd263b882d58cee3c671c6ba646fd}{grow} (condition\+\_\+type j, condition\+\_\+type j\+\_\+bar)
+\begin{DoxyCompactList}\small\item\em \hyperlink{grow_8cpp}{grow.\+cpp} \end{DoxyCompactList}\item 
+void \hyperlink{class_tree_ab61c4fff29f3551d8f67f075213331dc}{grow} (\hyperlink{struct_node}{Node} $\ast$node, condition\+\_\+type j, condition\+\_\+type j\+\_\+bar)
+\item 
+void \hyperlink{class_tree_ae78f42d798cdd24b3d5b24621b939468}{delete\+\_\+branches} (\hyperlink{struct_node}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em deleter.\+cpp \end{DoxyCompactList}\item 
+void \hyperlink{class_tree_a8e176aced327c226e89a3790cb8f3d68}{set\+\_\+output\+\_\+format} (\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\+\_\+format} \+\_\+output\+\_\+format)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_tree_aef29a87ebfb47bc1bb5cacff763d0c0d}{add} (condition\+\_\+type condition, unsigned int level, \hyperlink{struct_node}{Node} $\ast$node)
+\item 
+unsigned int \hyperlink{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}{count\+\_\+levels} (\hyperlink{struct_node}{Node} $\ast$node, unsigned int max\+\_\+level)
+\begin{DoxyCompactList}\small\item\em \hyperlink{count_8cpp}{count.\+cpp} \end{DoxyCompactList}\item 
+void \hyperlink{class_tree_a2fb927c8da9d55f28039b407b101ac28}{print\+\_\+branch} (\hyperlink{struct_node}{Node} $\ast$node)
+\item 
+void \hyperlink{class_tree_a5ff830823b2d44e86b61e4f882de3b6a}{print\+\_\+\+Latex\+\_\+begin} (std\+::ofstream $\ast$Latex\+\_\+print\+\_\+file)
+\item 
+void \hyperlink{class_tree_a761b5da2456ff63fe51105c79135c903}{print\+\_\+\+Latex\+\_\+branch} (\hyperlink{struct_node}{Node} $\ast$node, std\+::ofstream $\ast$Latex\+\_\+print\+\_\+file)
+\item 
+void \hyperlink{class_tree_a7ea34e54ff7824c3d24ce72dcb4fdbf4}{print\+\_\+\+Latex\+\_\+end} (std\+::ofstream $\ast$Latex\+\_\+print\+\_\+file)
+\item 
+void \hyperlink{class_tree_a5d7f439dbf62845d33ed604b88260332}{print\+\_\+a\+\_\+level} (unsigned int level, unsigned int max\+\_\+level, \hyperlink{struct_node}{Node} $\ast$node)
+\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{class_tree_ac539645ded3041f4142b8cb0a8a1c0b8}{find} (\hyperlink{struct_node}{Node} $\ast$node, condition\+\_\+type value)
+\begin{DoxyCompactList}\small\item\em \hyperlink{find_8cpp}{find.\+cpp} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}
+\item 
+unsigned int \hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\+\_\+digits\+\_\+printed}
+\item 
+\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\+\_\+format} \hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\+\_\+format}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Node, unsigned int default\+\_\+cond, typename condition\+\_\+type$>$\newline
+class Tree$<$ Node, default\+\_\+cond, condition\+\_\+type $>$}
+
+\hyperlink{class_tree}{Tree} class\+: Class containing tree root and functions for modification and generation of tree. 
+
+Usage\+: Use {\ttfamily Tree$<$\+Node,0,int$>$}. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \hyperlink{struct_node}{Node}} & Defined the node types. \\
+\hline
+{\em default\+\_\+cond} & The default condition in the array of conditions. \\
+\hline
+{\em condition\+\_\+type} & Type of the condition array and values, i.\+e., int, float, double, ... \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tree_a32a2cac7d7a95d1d549d528cc088660c}\label{class_tree_a32a2cac7d7a95d1d549d528cc088660c}} 
+\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{Tree()}{Tree()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+\hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::\hyperlink{class_tree}{Tree} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{_tree_8cpp}{Tree.\+cpp}. 
+
+Class constrcutor\+: Sets {\ttfamily root} to N\+U\+LL.
+
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+22 \{
+23     \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} = NULL;
+24     \hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed} = 1;
+25     \hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} = \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996ac9d3e887722f2bc482bcca9d41c512af}{None};
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_aa4d8eec83dea9da55071cdf181078119}\label{class_tree_aa4d8eec83dea9da55071cdf181078119}} 
+\index{Tree@{Tree}!````~Tree@{$\sim$\+Tree}}
+\index{````~Tree@{$\sim$\+Tree}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{$\sim$\+Tree()}{~Tree()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+\hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::$\sim$\hyperlink{class_tree}{Tree} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Class destructor\+: Removes all branches and resets {\ttfamily root} to N\+U\+LL. 
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{if}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}!=NULL)
+32     \{
+33         \hyperlink{class_tree_ae78f42d798cdd24b3d5b24621b939468}{delete\_branches}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root});
+34         \textcolor{keyword}{delete} \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root};
+35         \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} = NULL;
+36     \}
+37 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tree_af8292ba7cef24827af0584b31cfc33a8}\label{class_tree_af8292ba7cef24827af0584b31cfc33a8}} 
+\index{Tree@{Tree}!add@{add}}
+\index{add@{add}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::add (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{condition }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{add_8cpp}{add.\+cpp} 
+
+Add Function I\+: Adds tree nodes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em condition} & Value of the condition.\\
+\hline
+\end{DoxyParams}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{if}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}!=NULL)
+18         \hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(condition, 0, \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root});
+19     \textcolor{keywordflow}{else}
+20     \{
+21         \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}=\textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+22         *\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} = condition;
+23         \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = 0;
+24     \}
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a7c4512f8790d44351b07ed31491fd5e5}\label{class_tree_a7c4512f8790d44351b07ed31491fd5e5}} 
+\index{Tree@{Tree}!add@{add}}
+\index{add@{add}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::add (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{condition,  }\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Add Function II\+: Adds tree nodes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em condition} & Value of the condition. \\
+\hline
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+29 \{
+30     \textcolor{keywordflow}{if}(node!=NULL)
+31     \{
+32         \hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(condition, node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}, node);
+33     \}
+34     \textcolor{keywordflow}{else}
+35     \{
+36         std::cout << \textcolor{stringliteral}{"Add: NULL Input!"} << std::endl;
+37     \}
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_aef29a87ebfb47bc1bb5cacff763d0c0d}\label{class_tree_aef29a87ebfb47bc1bb5cacff763d0c0d}} 
+\index{Tree@{Tree}!add@{add}}
+\index{add@{add}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::add (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{condition,  }\item[{unsigned int}]{level,  }\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Add Function I\+II\+: Adds tree nodes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em condition} & Value of the condition. \\
+\hline
+\mbox{\tt in}  & {\em level} & Integer showing the level at which the new node is being added. \\
+\hline
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+42 \{
+43     \textcolor{keywordflow}{if}(node!=NULL)
+44     \{
+45         \textcolor{keywordflow}{if} (*node <= condition)
+46         \{
+47             \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+48             \{
+49                 \hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(condition, level+1, node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right});
+50             \}
+51             \textcolor{keywordflow}{else}
+52             \{
+53                 node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right} = \textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+54                 *(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}) = condition;
+55                 node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = level+1;
+56             \}
+57         \}
+58         \textcolor{keywordflow}{else}
+59         \{
+60             \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+61             \{
+62                 \hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(condition, level+1, node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right});
+63             \}
+64             \textcolor{keywordflow}{else}
+65             \{
+66                 node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left} = \textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+67                 *(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}) = condition;
+68                 node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = level+1;
+69             \}
+70         \}
+71     \}
+72     \textcolor{keywordflow}{else}
+73     \{
+74         std::cout << \textcolor{stringliteral}{"Add: NULL Input!"} << std::endl;
+75     \}
+76 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}\label{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}} 
+\index{Tree@{Tree}!count\+\_\+levels@{count\+\_\+levels}}
+\index{count\+\_\+levels@{count\+\_\+levels}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{count\+\_\+levels()}{count\_levels()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+unsigned int \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::count\+\_\+levels (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node,  }\item[{unsigned int}]{max\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{count_8cpp}{count.\+cpp} 
+
+Counts level below a node. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\mbox{\tt in}  & {\em max\+\_\+level} & The value of maximum level number found so far. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the maximum level value found below the branch the function was called upon.
+\end{DoxyReturn}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+15 \{
+16     max\_level = std::max(max\_level, node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level});
+17     
+18     \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+19         max\_level = std::max(max\_level, \hyperlink{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}{count\_levels}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}, max\_level));
+20     
+21     \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+22         max\_level = std::max(max\_level, \hyperlink{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}{count\_levels}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}, max\_level));
+23     
+24     \textcolor{keywordflow}{return} (max\_level);
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_ae78f42d798cdd24b3d5b24621b939468}\label{class_tree_ae78f42d798cdd24b3d5b24621b939468}} 
+\index{Tree@{Tree}!delete\+\_\+branches@{delete\+\_\+branches}}
+\index{delete\+\_\+branches@{delete\+\_\+branches}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{delete\+\_\+branches()}{delete\_branches()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::delete\+\_\+branches (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+deleter.\+cpp 
+
+Deletes branches below a specific node. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & Branches below this node will be deleted (this node itself is not deleted).\\
+\hline
+\end{DoxyParams}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{if}(node!=NULL)
+18     \{
+19         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+20         \{
+21             \hyperlink{class_tree_ae78f42d798cdd24b3d5b24621b939468}{delete\_branches}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left});
+22             node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}=NULL;
+23         \}
+24         
+25         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+26         \{
+27             \hyperlink{class_tree_ae78f42d798cdd24b3d5b24621b939468}{delete\_branches}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right});
+28             node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}=NULL;
+29         \}
+30     \}
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}\label{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}} 
+\index{Tree@{Tree}!find@{find}}
+\index{find@{find}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::find (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{value }\end{DoxyParamCaption})}
+
+Finds the first node that matches the condition. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value to be found in the nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The address to the node with matching condition. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keywordflow}{if}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}!=NULL)
+33     \{
+34         \textcolor{keywordflow}{if}(*\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} == value)
+35             \textcolor{keywordflow}{return} \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root};
+36         \textcolor{keywordflow}{if} (*\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} < value)
+37             \textcolor{keywordflow}{return} \hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}, value);
+38         \textcolor{keywordflow}{else}
+39             \textcolor{keywordflow}{return} \hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}, value);
+40     \}
+41     \textcolor{keywordflow}{return} NULL;
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_ac539645ded3041f4142b8cb0a8a1c0b8}\label{class_tree_ac539645ded3041f4142b8cb0a8a1c0b8}} 
+\index{Tree@{Tree}!find@{find}}
+\index{find@{find}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::find (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node,  }\item[{condition\+\_\+type}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{find_8cpp}{find.\+cpp} 
+
+Private function called by public find function. Finds the first node matching to the condition. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\mbox{\tt in}  & {\em value} & The condition value to be found in the nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The address to the node with matching condition.
+\end{DoxyReturn}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{if}(node!=NULL)
+18     \{
+19         \textcolor{keywordflow}{if}(*node == value)
+20             \textcolor{keywordflow}{return} node;
+21         \textcolor{keywordflow}{if} (*node < value)
+22             \textcolor{keywordflow}{return} \hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}, value);
+23         \textcolor{keywordflow}{else}
+24             \textcolor{keywordflow}{return} \hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}, value);
+25     \}
+26     \textcolor{keywordflow}{return} NULL;
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_ab05cd263b882d58cee3c671c6ba646fd}\label{class_tree_ab05cd263b882d58cee3c671c6ba646fd}} 
+\index{Tree@{Tree}!grow@{grow}}
+\index{grow@{grow}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{grow()}{grow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::grow (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{j,  }\item[{condition\+\_\+type}]{j\+\_\+bar }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{grow_8cpp}{grow.\+cpp} 
+
+Grow function I\+: Grows branches by adding a new node using random paths. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em j} & The condition value to be added as a new node. \\
+\hline
+\mbox{\tt in}  & {\em j\+\_\+bar} & The deciding condition.\\
+\hline
+\end{DoxyParams}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{if}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}!=NULL)
+18         \hyperlink{class_tree_ab05cd263b882d58cee3c671c6ba646fd}{grow}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}, j, j\_bar);
+19     \textcolor{keywordflow}{else}
+20     \{
+21         \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}=\textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+22         *\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root} = j;
+23         \hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = 0;
+24     \}
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_ab61c4fff29f3551d8f67f075213331dc}\label{class_tree_ab61c4fff29f3551d8f67f075213331dc}} 
+\index{Tree@{Tree}!grow@{grow}}
+\index{grow@{grow}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{grow()}{grow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::grow (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node,  }\item[{condition\+\_\+type}]{j,  }\item[{condition\+\_\+type}]{j\+\_\+bar }\end{DoxyParamCaption})}
+
+Grow function II\+: Grows branches by adding a new node using random paths. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & Defines the starting point the grow process. \\
+\hline
+\mbox{\tt in}  & {\em j} & The condition value to be added as a new node. \\
+\hline
+\mbox{\tt in}  & {\em j\+\_\+bar} & The deciding condition. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+29 \{
+30     \textcolor{keywordflow}{if}(rand() % 2)
+31     \{
+32         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+33         \{
+34             \hyperlink{class_tree_ab05cd263b882d58cee3c671c6ba646fd}{grow}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}, j, j\_bar);
+35         \}
+36         \textcolor{keywordflow}{else}
+37         \{
+38             node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right} = \textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+39             *(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}) = j;
+40             node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}+1;
+41         \}
+42     \}
+43     \textcolor{keywordflow}{else}
+44     \{
+45         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+46         \{
+47             \hyperlink{class_tree_ab05cd263b882d58cee3c671c6ba646fd}{grow}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}, j, j\_bar);
+48         \}
+49         \textcolor{keywordflow}{else}
+50         \{
+51             node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left} = \textcolor{keyword}{new} \hyperlink{struct_node}{Node};
+52             *(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}) = j;
+53             node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}+1;
+54         \}
+55     \}
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_ac4a139b22a1188e616efbd2919871959}\label{class_tree_ac4a139b22a1188e616efbd2919871959}} 
+\index{Tree@{Tree}!print@{print}}
+\index{print@{print}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Print function I\+: Prints entire tree starting from the {\ttfamily root}. 
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{if}(\hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} & \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a2609fadb77bb3d98c615b41ac79a1d31}{Screen})
+35         \hyperlink{class_tree_a2fb927c8da9d55f28039b407b101ac28}{print\_branch}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root});
+36     
+37     \textcolor{keywordflow}{if}(\hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} & \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a7a8b58d78c532f752dd1c5da89e254e7}{Latex})
+38     \{
+39         std::cout << \textcolor{stringliteral}{"Writing Latex file: Latex\_print.tex..."};
+40         std::ofstream Latex\_print\_file (\textcolor{stringliteral}{"Latex\_print.tex"});
+41         \hyperlink{class_tree_a5ff830823b2d44e86b61e4f882de3b6a}{print\_Latex\_begin}(&Latex\_print\_file);
+42         \hyperlink{class_tree_a761b5da2456ff63fe51105c79135c903}{print\_Latex\_branch}(\hyperlink{class_tree_ae1cb548295b2e451164d89b16ac72d17}{root}, &Latex\_print\_file);
+43         \hyperlink{class_tree_a7ea34e54ff7824c3d24ce72dcb4fdbf4}{print\_Latex\_end}(&Latex\_print\_file);
+44         Latex\_print\_file.close();
+45         std::cout << \textcolor{stringliteral}{"   Done."} << std::endl;
+46     \}
+47 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_aeef6af51b2097d5e61335005568835d1}\label{class_tree_aeef6af51b2097d5e61335005568835d1}} 
+\index{Tree@{Tree}!print@{print}}
+\index{print@{print}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+Print function II\+: Prints all branches below a node. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordflow}{if}(\hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} & \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a2609fadb77bb3d98c615b41ac79a1d31}{Screen})
+53         \hyperlink{class_tree_a2fb927c8da9d55f28039b407b101ac28}{print\_branch}(node);
+54     
+55     \textcolor{keywordflow}{if}(\hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} & \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a7a8b58d78c532f752dd1c5da89e254e7}{Latex})
+56     \{
+57         std::cout << \textcolor{stringliteral}{"Writing Latex file: Latex\_print.tex..."};
+58         std::ofstream Latex\_print\_file (\textcolor{stringliteral}{"Latex\_print.tex"});
+59         \hyperlink{class_tree_a5ff830823b2d44e86b61e4f882de3b6a}{print\_Latex\_begin}(&Latex\_print\_file);
+60         \hyperlink{class_tree_a761b5da2456ff63fe51105c79135c903}{print\_Latex\_branch}(node, &Latex\_print\_file);
+61         \hyperlink{class_tree_a7ea34e54ff7824c3d24ce72dcb4fdbf4}{print\_Latex\_end}(&Latex\_print\_file);
+62         Latex\_print\_file.close();
+63         std::cout << \textcolor{stringliteral}{"   Done."} << std::endl;
+64     \}
+65 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a5d7f439dbf62845d33ed604b88260332}\label{class_tree_a5d7f439dbf62845d33ed604b88260332}} 
+\index{Tree@{Tree}!print\+\_\+a\+\_\+level@{print\+\_\+a\+\_\+level}}
+\index{print\+\_\+a\+\_\+level@{print\+\_\+a\+\_\+level}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print\+\_\+a\+\_\+level()}{print\_a\_level()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print\+\_\+a\+\_\+level (\begin{DoxyParamCaption}\item[{unsigned int}]{level,  }\item[{unsigned int}]{max\+\_\+level,  }\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Private function called by private function print\+\_\+branch. Prints all nodes that are located on the same level. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & The level that is being printed. \\
+\hline
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\mbox{\tt in}  & {\em max\+\_\+level} & Maximum level number. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+122 \{
+123     \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}==level)
+124     \{
+125         std::cout << node->\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond];
+126         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<(pow(2,(max\_level-level+1))-1); j++)
+127             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+128                 std::cout << \textcolor{stringliteral}{" "};
+129     \}
+130     
+131     \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+132         \hyperlink{class_tree_a5d7f439dbf62845d33ed604b88260332}{print\_a\_level}(level, max\_level, node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left});
+133     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}<=level-1 && level>0)
+134         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< pow(2,(level-node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}-1)); i++)
+135         \{
+136             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}/2; k++)
+137                 std::cout << \textcolor{stringliteral}{" "};
+138             std::cout << \textcolor{stringliteral}{"N"};
+139             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}/2; k++)
+140                 std::cout << \textcolor{stringliteral}{" "};
+141             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<(pow(2,(max\_level-level+1))-1); j++)
+142                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+143                     std::cout << \textcolor{stringliteral}{" "};
+144         \}
+145     
+146     \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+147         \hyperlink{class_tree_a5d7f439dbf62845d33ed604b88260332}{print\_a\_level}(level, max\_level, node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right});
+148     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}<=level-1 && level>0)
+149         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< pow(2,(level-node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level}-1)); i++)
+150         \{
+151             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}/2; k++)
+152                 std::cout << \textcolor{stringliteral}{" "};
+153             std::cout << \textcolor{stringliteral}{"N"};
+154             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}/2; k++)
+155                 std::cout << \textcolor{stringliteral}{" "};
+156             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<(pow(2,(max\_level-level+1))-1); j++)
+157                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+158                     std::cout << \textcolor{stringliteral}{" "};
+159         \}
+160 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a2fb927c8da9d55f28039b407b101ac28}\label{class_tree_a2fb927c8da9d55f28039b407b101ac28}} 
+\index{Tree@{Tree}!print\+\_\+branch@{print\+\_\+branch}}
+\index{print\+\_\+branch@{print\+\_\+branch}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print\+\_\+branch()}{print\_branch()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print\+\_\+branch (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Private function called by public print functions. Prints branches below a node. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+164 \{
+165     \textcolor{keywordflow}{if}(node!=NULL)
+166     \{
+167         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_level = 0;
+168         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} local\_level = node->\hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level};
+169         max\_level = \hyperlink{class_tree_afd369a246a682e225beb2d2c1c5e8c5a}{count\_levels}(node, max\_level);
+170         std::cout << \textcolor{stringliteral}{"Levels: "} << max\_level-local\_level+1 << std::endl;
+171         
+172         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=local\_level; i<=max\_level; i++)
+173         \{
+174             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<=(pow(2,(max\_level-i))-1); j++)
+175                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+176                     std::cout << \textcolor{stringliteral}{" "};
+177             \hyperlink{class_tree_a5d7f439dbf62845d33ed604b88260332}{print\_a\_level}(i, max\_level, node);
+178             std::cout << std::endl;
+179             
+180             \textcolor{keywordflow}{if}(i!=max\_level)
+181             \{
+182                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<=(pow(2,(max\_level-i)) - int(pow(2,(max\_level-i-1))-1)/2 -2); j++)
+183                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+184                         std::cout << \textcolor{stringliteral}{" "};
+185                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<pow(2,(i-local\_level)); j++)
+186                 \{
+187                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<N\_digits\_printed/2; k++)
+188                         std::cout << \textcolor{stringliteral}{" "};
+189                     std::cout << \textcolor{stringliteral}{"/"};
+190                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<N\_digits\_printed/2; k++)
+191                         std::cout << \textcolor{stringliteral}{" "};
+192                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<(int(pow(2,(max\_level-i-1))-1)+(i==max\_level-1)); j++)
+193                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+194                             std::cout << \textcolor{stringliteral}{" "};
+195                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<N\_digits\_printed/2; k++)
+196                         std::cout << \textcolor{stringliteral}{" "};
+197                     std::cout << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"};
+198                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<N\_digits\_printed/2; k++)
+199                         std::cout << \textcolor{stringliteral}{" "};
+200                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<(pow(2,(max\_level-i+1)) - int(pow(2,(max\_level-i-1+1))-1)/2 -2-(i==
+      max\_level-1)); j++)
+201                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0; k<\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed}; k++)
+202                             std::cout << \textcolor{stringliteral}{" "};
+203                 \}
+204                 std::cout << std::endl;
+205             \}
+206         \}
+207     \}\textcolor{keywordflow}{else}
+208         std::cout << \textcolor{stringliteral}{"Print: Nothing to print! (NULL node)"} << std::endl;
+209 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a5ff830823b2d44e86b61e4f882de3b6a}\label{class_tree_a5ff830823b2d44e86b61e4f882de3b6a}} 
+\index{Tree@{Tree}!print\+\_\+\+Latex\+\_\+begin@{print\+\_\+\+Latex\+\_\+begin}}
+\index{print\+\_\+\+Latex\+\_\+begin@{print\+\_\+\+Latex\+\_\+begin}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Latex\+\_\+begin()}{print\_Latex\_begin()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print\+\_\+\+Latex\+\_\+begin (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{Latex\+\_\+print\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initiates the Latex file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Latex\+\_\+print\+\_\+file} & Pointer to opened file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+69 \{
+70     \textcolor{keywordflow}{if} ((*Latex\_print\_file).is\_open())
+71     \{
+72         *Latex\_print\_file << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)documentclass[landscape]\{article\}\(\backslash\)\(\backslash\)usepackage\{tikz-qtree\}\(\backslash\)\(\backslash\)tikzset\{every
+       tree node/.style=\{minimum width=2em,draw,circle\},blank/.style=\{draw=none\},edge from parent/.style=\{draw, edge
+       from parent path=\{(\(\backslash\)\(\backslash\)tikzparentnode) -- (\(\backslash\)\(\backslash\)tikzchildnode)\}\}\}\(\backslash\)\(\backslash\)begin\{document\}\(\backslash\)\(\backslash\)begin\{center\}\(\backslash\)\(\backslash\)resizebox\{\(\backslash\)\(\backslash\)
+      textheight\}\{!\}\{\(\backslash\)\(\backslash\)begin\{tikzpicture\}\(\backslash\)\(\backslash\)Tree"} << std::endl;;
+73     \}
+74     \textcolor{keywordflow}{else}
+75         std::cout << \textcolor{stringliteral}{"Unable to write to Latex\_print.tex"} << std::endl;
+76     
+77 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a761b5da2456ff63fe51105c79135c903}\label{class_tree_a761b5da2456ff63fe51105c79135c903}} 
+\index{Tree@{Tree}!print\+\_\+\+Latex\+\_\+branch@{print\+\_\+\+Latex\+\_\+branch}}
+\index{print\+\_\+\+Latex\+\_\+branch@{print\+\_\+\+Latex\+\_\+branch}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Latex\+\_\+branch()}{print\_Latex\_branch()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print\+\_\+\+Latex\+\_\+branch (\begin{DoxyParamCaption}\item[{\hyperlink{struct_node}{Node} $\ast$}]{node,  }\item[{std\+::ofstream $\ast$}]{Latex\+\_\+print\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Prints all branches below a node into the Latex file. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node} & A node in the tree. \\
+\hline
+\mbox{\tt in}  & {\em Latex\+\_\+print\+\_\+file} & Pointer to opened file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+93 \{
+94     *Latex\_print\_file << \textcolor{stringliteral}{"["};
+95     
+96     \textcolor{keywordflow}{if}(node!=NULL)
+97     \{
+98         *Latex\_print\_file << \textcolor{stringliteral}{"."} << node->\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond] << \textcolor{stringliteral}{" "};
+99         
+100         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}!=NULL)
+101         \{
+102             \hyperlink{class_tree_a761b5da2456ff63fe51105c79135c903}{print\_Latex\_branch}(node->\hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left}, Latex\_print\_file);
+103         \}
+104         \textcolor{keywordflow}{else}
+105             *Latex\_print\_file << \textcolor{stringliteral}{"N "};
+106         
+107         \textcolor{keywordflow}{if}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}!=NULL)
+108         \{
+109             \hyperlink{class_tree_a761b5da2456ff63fe51105c79135c903}{print\_Latex\_branch}(node->\hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right}, Latex\_print\_file);
+110         \}
+111         \textcolor{keywordflow}{else}
+112             *Latex\_print\_file << \textcolor{stringliteral}{"N "};
+113     \}
+114     \textcolor{keywordflow}{else}
+115         *Latex\_print\_file << \textcolor{stringliteral}{"N "};
+116     
+117     *Latex\_print\_file << \textcolor{stringliteral}{"]"};
+118 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a7ea34e54ff7824c3d24ce72dcb4fdbf4}\label{class_tree_a7ea34e54ff7824c3d24ce72dcb4fdbf4}} 
+\index{Tree@{Tree}!print\+\_\+\+Latex\+\_\+end@{print\+\_\+\+Latex\+\_\+end}}
+\index{print\+\_\+\+Latex\+\_\+end@{print\+\_\+\+Latex\+\_\+end}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Latex\+\_\+end()}{print\_Latex\_end()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::print\+\_\+\+Latex\+\_\+end (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{Latex\+\_\+print\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Closes the Latex file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Latex\+\_\+print\+\_\+file} & Pointer to opened file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordflow}{if} ((*Latex\_print\_file).is\_open())
+83     \{
+84         *Latex\_print\_file << \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)end\{tikzpicture\}\}\(\backslash\)\(\backslash\)end\{center\}\(\backslash\)\(\backslash\)end\{document\}"} << std::endl;;
+85     \}
+86     \textcolor{keywordflow}{else}
+87         std::cout << \textcolor{stringliteral}{"Unable to write to Latex\_print.tex"} << std::endl;
+88     
+89 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a8e176aced327c226e89a3790cb8f3d68}\label{class_tree_a8e176aced327c226e89a3790cb8f3d68}} 
+\index{Tree@{Tree}!set\+\_\+output\+\_\+format@{set\+\_\+output\+\_\+format}}
+\index{set\+\_\+output\+\_\+format@{set\+\_\+output\+\_\+format}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{set\+\_\+output\+\_\+format()}{set\_output\_format()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::set\+\_\+output\+\_\+format (\begin{DoxyParamCaption}\item[{\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\+\_\+format}}]{\+\_\+output\+\_\+format }\end{DoxyParamCaption})}
+
+Sets the format of the output to none, or on screen, or in Latex, or both. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+output\+\_\+format} & Format of the output chosen from print\+\_\+format {\ttfamily enum}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+27 \{
+28     \hyperlink{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}{output\_format} = \_output\_format;
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tree_a21f8cfc7ca1e7bd8fe8c33c94240449f}\label{class_tree_a21f8cfc7ca1e7bd8fe8c33c94240449f}} 
+\index{Tree@{Tree}!set\+\_\+print\+\_\+precision@{set\+\_\+print\+\_\+precision}}
+\index{set\+\_\+print\+\_\+precision@{set\+\_\+print\+\_\+precision}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{set\+\_\+print\+\_\+precision()}{set\_print\_precision()}}
+{\footnotesize\ttfamily template$<$typename Node , unsigned int default\+\_\+cond, typename condition\+\_\+type $>$ \\
+void \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::set\+\_\+print\+\_\+precision (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+\+N\+\_\+digits\+\_\+printed }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{print_8cpp}{print.\+cpp} 
+
+Changes the value for the number of decimal points to be printed. by the std\+::cout functions. Also controls the spaces in tree branch visualizations. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+\+N\+\_\+digits\+\_\+printed} & User input for the number of decimal points to be printed.\\
+\hline
+\end{DoxyParams}
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+19 \{
+20     \hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed} = \_N\_digits\_printed;
+21     std::cout << std::fixed;
+22     std::cout << std::setprecision(\hyperlink{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}{N\_digits\_printed});
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}\label{class_tree_ad24ef7cae6a7c0226280cf56bbc25f53}} 
+\index{Tree@{Tree}!N\+\_\+digits\+\_\+printed@{N\+\_\+digits\+\_\+printed}}
+\index{N\+\_\+digits\+\_\+printed@{N\+\_\+digits\+\_\+printed}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{N\+\_\+digits\+\_\+printed}{N\_digits\_printed}}
+{\footnotesize\ttfamily template$<$typename Node, unsigned int default\+\_\+cond, typename condition\+\_\+type$>$ \\
+unsigned int \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::N\+\_\+digits\+\_\+printed\hspace{0.3cm}{\ttfamily [private]}}
+
+Number of decimal points to be printed, default is 1. \mbox{\Hypertarget{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}\label{class_tree_aeaf14b04be7b3de8214fcc5c1545ebde}} 
+\index{Tree@{Tree}!output\+\_\+format@{output\+\_\+format}}
+\index{output\+\_\+format@{output\+\_\+format}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{output\+\_\+format}{output\_format}}
+{\footnotesize\ttfamily template$<$typename Node, unsigned int default\+\_\+cond, typename condition\+\_\+type$>$ \\
+\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\+\_\+format} \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::output\+\_\+format\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_tree_ae1cb548295b2e451164d89b16ac72d17}\label{class_tree_ae1cb548295b2e451164d89b16ac72d17}} 
+\index{Tree@{Tree}!root@{root}}
+\index{root@{root}!Tree@{Tree}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily template$<$typename Node, unsigned int default\+\_\+cond, typename condition\+\_\+type$>$ \\
+\hyperlink{struct_node}{Node}$\ast$ \hyperlink{class_tree}{Tree}$<$ \hyperlink{struct_node}{Node}, default\+\_\+cond, condition\+\_\+type $>$\+::root\hspace{0.3cm}{\ttfamily [private]}}
+
+The root of the tree, lowest node and located at level 0 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_tree_8hpp}{Tree.\+hpp}\item 
+\hyperlink{add_8cpp}{add.\+cpp}\item 
+\hyperlink{count_8cpp}{count.\+cpp}\item 
+\hyperlink{delete_8cpp}{delete.\+cpp}\item 
+\hyperlink{find_8cpp}{find.\+cpp}\item 
+\hyperlink{grow_8cpp}{grow.\+cpp}\item 
+\hyperlink{_tree_8cpp}{Tree.\+cpp}\item 
+\hyperlink{print_8cpp}{print.\+cpp}\end{DoxyCompactItemize}

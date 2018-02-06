@@ -1,0 +1,274 @@
+\hypertarget{struct_node}{}\section{Node$<$ N, condition\+\_\+type, default\+\_\+cond $>$ Struct Template Reference}
+\label{struct_node}\index{Node$<$ N, condition\+\_\+type, default\+\_\+cond $>$@{Node$<$ N, condition\+\_\+type, default\+\_\+cond $>$}}
+
+
+\hyperlink{main_8hpp}{main.\+hpp}  
+
+
+
+
+{\ttfamily \#include $<$main.\+hpp$>$}
+
+
+
+Collaboration diagram for Node$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_node_a4ada28a6ae351e0507feeb065818bc31}{Node} ()
+\item 
+\hyperlink{struct_node_a734cbfa12fda2238fe488eceaae1963a}{Node} (condition\+\_\+type initial\+\_\+condition)
+\item 
+void \hyperlink{struct_node_a1fd39050dc2575b78fdfe894c006c6af}{operator=} (const condition\+\_\+type \&value)
+\item 
+bool \hyperlink{struct_node_a971919f93889cf8d00a6e28bd4fe947e}{operator==} (const condition\+\_\+type \&value) const
+\item 
+bool \hyperlink{struct_node_a6ffc542cb938c021de9086e34c65b890}{operator$>$=} (const condition\+\_\+type \&value) const
+\item 
+bool \hyperlink{struct_node_a1d153da28c06489540efb6cc7117eb6d}{operator$<$=} (const condition\+\_\+type \&value) const
+\item 
+bool \hyperlink{struct_node_a8a002b9ad673ecc9715803e374481018}{operator$>$} (const condition\+\_\+type \&value) const
+\item 
+bool \hyperlink{struct_node_a9a8c2549e36079adb11fa1aafe9c6cc0}{operator$<$} (const condition\+\_\+type \&value) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+condition\+\_\+type \hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition} \mbox{[}N\mbox{]} = \{0\}
+\item 
+unsigned int \hyperlink{struct_node_a89d21337f6535c79bb46bbf132e57313}{condition\+\_\+size} = N
+\item 
+unsigned int \hyperlink{struct_node_a64a379c6dd2c75ade9687670c517b7e7}{level} = 0
+\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{struct_node_a779292dace788d33114830cca763ccf3}{Left} = N\+U\+LL
+\item 
+\hyperlink{struct_node}{Node} $\ast$ \hyperlink{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}{Right} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int N, typename condition\+\_\+type, unsigned int default\+\_\+cond$>$\newline
+struct Node$<$ N, condition\+\_\+type, default\+\_\+cond $>$}
+
+\hyperlink{main_8hpp}{main.\+hpp} 
+
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved.\+Structure defining each node in the tree.
+\end{DoxyCopyright}
+Usage\+: Use {\ttfamily Node$<$1,int,0$>$}. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & Size of the {\ttfamily condition} array. \\
+\hline
+{\em default\+\_\+cond} & The default condition in the array of conditions. \\
+\hline
+{\em condition\+\_\+type} & Type of the condition array and values, i.\+e., int, float, double, ... \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_node_a4ada28a6ae351e0507feeb065818bc31}\label{struct_node_a4ada28a6ae351e0507feeb065818bc31}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+\hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::\hyperlink{struct_node}{Node} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constrcutor I. 
+\begin{DoxyCode}
+34 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a734cbfa12fda2238fe488eceaae1963a}\label{struct_node_a734cbfa12fda2238fe488eceaae1963a}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+\hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::\hyperlink{struct_node}{Node} (\begin{DoxyParamCaption}\item[{condition\+\_\+type}]{initial\+\_\+condition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constrcutor II\+: Sets the element located at {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} to an initial value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em initial\+\_\+condition} & Initial condition for the member of condition array sitting in default location. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+41     \{
+42         \hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond] = initial\_condition;
+43     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_node_a9a8c2549e36079adb11fa1aafe9c6cc0}\label{struct_node_a9a8c2549e36079adb11fa1aafe9c6cc0}} 
+\index{Node@{Node}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+bool \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator checks if {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is smaller than the value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is smaller than the inputted value. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+94     \{
+95         \textcolor{keywordflow}{return} (\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]<value);
+96     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a1d153da28c06489540efb6cc7117eb6d}\label{struct_node_a1d153da28c06489540efb6cc7117eb6d}} 
+\index{Node@{Node}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+bool \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator$<$= (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator checks if {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is smaller than or equal to the value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is smaller than or equal to the inputted value. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76     \{
+77         \textcolor{keywordflow}{return} (\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]<=value);
+78     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a1fd39050dc2575b78fdfe894c006c6af}\label{struct_node_a1fd39050dc2575b78fdfe894c006c6af}} 
+\index{Node@{Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+void \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator= (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator setting a condition value to {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+49     \{
+50         \hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]=value;
+51     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a971919f93889cf8d00a6e28bd4fe947e}\label{struct_node_a971919f93889cf8d00a6e28bd4fe947e}} 
+\index{Node@{Node}!operator==@{operator==}}
+\index{operator==@{operator==}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+bool \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator== (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator checks equality of the condition value to {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is equal to the inputted value. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+58     \{
+59         \textcolor{keywordflow}{return} (\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]==value);
+60     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a8a002b9ad673ecc9715803e374481018}\label{struct_node_a8a002b9ad673ecc9715803e374481018}} 
+\index{Node@{Node}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+bool \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator$>$ (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator checks if {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is larger than the value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is larger than the inputted value. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+85     \{
+86         \textcolor{keywordflow}{return} (\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]>value);
+87     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_node_a6ffc542cb938c021de9086e34c65b890}\label{struct_node_a6ffc542cb938c021de9086e34c65b890}} 
+\index{Node@{Node}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Node@{Node}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+bool \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::operator$>$= (\begin{DoxyParamCaption}\item[{const condition\+\_\+type \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator checks if {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is larger than or equal to the value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The condition value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the {\ttfamily condtion}\mbox{[}{\ttfamily default\+\_\+cond}\mbox{]} is larger than or equal to the inputted value. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+67     \{
+68         \textcolor{keywordflow}{return} (\hyperlink{struct_node_a84fa4c586396e81041eb3a4f6a46f418}{condition}[default\_cond]>=value);
+69     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_node_a84fa4c586396e81041eb3a4f6a46f418}\label{struct_node_a84fa4c586396e81041eb3a4f6a46f418}} 
+\index{Node@{Node}!condition@{condition}}
+\index{condition@{condition}!Node@{Node}}
+\subsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+condition\+\_\+type \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::condition\mbox{[}N\mbox{]} = \{0\}}
+
+Array of conditions, size defined by {\ttfamily N}. \mbox{\Hypertarget{struct_node_a89d21337f6535c79bb46bbf132e57313}\label{struct_node_a89d21337f6535c79bb46bbf132e57313}} 
+\index{Node@{Node}!condition\+\_\+size@{condition\+\_\+size}}
+\index{condition\+\_\+size@{condition\+\_\+size}!Node@{Node}}
+\subsubsection{\texorpdfstring{condition\+\_\+size}{condition\_size}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+unsigned int \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::condition\+\_\+size = N}
+
+Size of the {\ttfamily condition} array. \mbox{\Hypertarget{struct_node_a779292dace788d33114830cca763ccf3}\label{struct_node_a779292dace788d33114830cca763ccf3}} 
+\index{Node@{Node}!Left@{Left}}
+\index{Left@{Left}!Node@{Node}}
+\subsubsection{\texorpdfstring{Left}{Left}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+\hyperlink{struct_node}{Node}$\ast$ \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::Left = N\+U\+LL}
+
+Address to the left child node. \mbox{\Hypertarget{struct_node_a64a379c6dd2c75ade9687670c517b7e7}\label{struct_node_a64a379c6dd2c75ade9687670c517b7e7}} 
+\index{Node@{Node}!level@{level}}
+\index{level@{level}!Node@{Node}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+unsigned int \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::level = 0}
+
+Level at which this node is located. \mbox{\Hypertarget{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}\label{struct_node_ae5ad7032e0a9a52f5a849e33e23a7dfa}} 
+\index{Node@{Node}!Right@{Right}}
+\index{Right@{Right}!Node@{Node}}
+\subsubsection{\texorpdfstring{Right}{Right}}
+{\footnotesize\ttfamily template$<$int N, typename condition\+\_\+type , unsigned int default\+\_\+cond$>$ \\
+\hyperlink{struct_node}{Node}$\ast$ \hyperlink{struct_node}{Node}$<$ N, condition\+\_\+type, default\+\_\+cond $>$\+::Right = N\+U\+LL}
+
+Address to the right child node. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{main_8hpp}{main.\+hpp}\end{DoxyCompactItemize}

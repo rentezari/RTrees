@@ -1,0 +1,251 @@
+.TH "Node< N, condition_type, default_cond >" 3 "Sat Feb 11 2017" "Rtree" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Node< N, condition_type, default_cond > \- \fBmain\&.hpp\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <main\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNode\fP ()"
+.br
+.ti -1c
+.RI "\fBNode\fP (condition_type initial_condition)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const condition_type &value)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const condition_type &value) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const condition_type &value) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const condition_type &value) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const condition_type &value) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const condition_type &value) const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "condition_type \fBcondition\fP [N] = {0}"
+.br
+.ti -1c
+.RI "unsigned int \fBcondition_size\fP = N"
+.br
+.ti -1c
+.RI "unsigned int \fBlevel\fP = 0"
+.br
+.ti -1c
+.RI "\fBNode\fP * \fBLeft\fP = NULL"
+.br
+.ti -1c
+.RI "\fBNode\fP * \fBRight\fP = NULL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<int N, typename condition_type, unsigned int default_cond>
+.br
+struct Node< N, condition_type, default_cond >"
+\fBmain\&.hpp\fP 
+
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&.Structure defining each node in the tree\&.
+.RE
+.PP
+Usage: Use \fCNode<1,int,0>\fP\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIN\fP Size of the \fCcondition\fP array\&. 
+.br
+\fIdefault_cond\fP The default condition in the array of conditions\&. 
+.br
+\fIcondition_type\fP Type of the condition array and values, i\&.e\&., int, float, double, \&.\&.\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<int N, typename condition_type , unsigned int default_cond> \fBNode\fP< N, condition_type, default_cond >::\fBNode\fP ()\fC [inline]\fP"
+Constrcutor I\&. 
+.PP
+.nf
+34 {}
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> \fBNode\fP< N, condition_type, default_cond >::\fBNode\fP (condition_type initial_condition)\fC [inline]\fP"
+Constrcutor II: Sets the element located at \fCcondtion\fP[\fCdefault_cond\fP] to an initial value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinitial_condition\fP Initial condition for the member of condition array sitting in default location\&. 
+.RE
+.PP
+
+.PP
+.nf
+41     {
+42         condition[default_cond] = initial_condition;
+43     }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "template<int N, typename condition_type , unsigned int default_cond> bool \fBNode\fP< N, condition_type, default_cond >::operator< (const condition_type & value) const\fC [inline]\fP"
+Operator checks if \fCcondtion\fP[\fCdefault_cond\fP] is smaller than the value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the \fCcondtion\fP[\fCdefault_cond\fP] is smaller than the inputted value\&. 
+.RE
+.PP
+
+.PP
+.nf
+94     {
+95         return (condition[default_cond]<value);
+96     }
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> bool \fBNode\fP< N, condition_type, default_cond >::operator<= (const condition_type & value) const\fC [inline]\fP"
+Operator checks if \fCcondtion\fP[\fCdefault_cond\fP] is smaller than or equal to the value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the \fCcondtion\fP[\fCdefault_cond\fP] is smaller than or equal to the inputted value\&. 
+.RE
+.PP
+
+.PP
+.nf
+76     {
+77         return (condition[default_cond]<=value);
+78     }
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> void \fBNode\fP< N, condition_type, default_cond >::operator= (const condition_type & value)\fC [inline]\fP"
+Operator setting a condition value to \fCcondtion\fP[\fCdefault_cond\fP] 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+
+.PP
+.nf
+49     {
+50         condition[default_cond]=value;
+51     }
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> bool \fBNode\fP< N, condition_type, default_cond >::operator== (const condition_type & value) const\fC [inline]\fP"
+Operator checks equality of the condition value to \fCcondtion\fP[\fCdefault_cond\fP] 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the \fCcondtion\fP[\fCdefault_cond\fP] is equal to the inputted value\&. 
+.RE
+.PP
+
+.PP
+.nf
+58     {
+59         return (condition[default_cond]==value);
+60     }
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> bool \fBNode\fP< N, condition_type, default_cond >::operator> (const condition_type & value) const\fC [inline]\fP"
+Operator checks if \fCcondtion\fP[\fCdefault_cond\fP] is larger than the value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the \fCcondtion\fP[\fCdefault_cond\fP] is larger than the inputted value\&. 
+.RE
+.PP
+
+.PP
+.nf
+85     {
+86         return (condition[default_cond]>value);
+87     }
+.fi
+.SS "template<int N, typename condition_type , unsigned int default_cond> bool \fBNode\fP< N, condition_type, default_cond >::operator>= (const condition_type & value) const\fC [inline]\fP"
+Operator checks if \fCcondtion\fP[\fCdefault_cond\fP] is larger than or equal to the value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the \fCcondtion\fP[\fCdefault_cond\fP] is larger than or equal to the inputted value\&. 
+.RE
+.PP
+
+.PP
+.nf
+67     {
+68         return (condition[default_cond]>=value);
+69     }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "template<int N, typename condition_type , unsigned int default_cond> condition_type \fBNode\fP< N, condition_type, default_cond >::condition[N] = {0}"
+Array of conditions, size defined by \fCN\fP\&. 
+.SS "template<int N, typename condition_type , unsigned int default_cond> unsigned int \fBNode\fP< N, condition_type, default_cond >::condition_size = N"
+Size of the \fCcondition\fP array\&. 
+.SS "template<int N, typename condition_type , unsigned int default_cond> \fBNode\fP* \fBNode\fP< N, condition_type, default_cond >::Left = NULL"
+Address to the left child node\&. 
+.SS "template<int N, typename condition_type , unsigned int default_cond> unsigned int \fBNode\fP< N, condition_type, default_cond >::level = 0"
+Level at which this node is located\&. 
+.SS "template<int N, typename condition_type , unsigned int default_cond> \fBNode\fP* \fBNode\fP< N, condition_type, default_cond >::Right = NULL"
+Address to the right child node\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Rtree from the source code\&.

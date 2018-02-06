@@ -1,0 +1,131 @@
+.TH "main.cpp" 3 "Sat Feb 11 2017" "Rtree" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'main\&.hpp'\fP
+.br
+\fC#include 'Tree\&.cpp'\fP
+.br
+\fC#include <RInside\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.RI "\fBmain\&.cpp\fP "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+\fBmain\&.cpp\fP RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+26 {
+27     std::cout << "Start\&.\&.\&." << std::endl;
+28     
+29     //For using R functions\&. It also seeds the random function for the rest of program\&.
+30     RInside R;
+31     //For example:
+32     Rcpp::NumericVector result = Rcpp::rnorm(2);
+33     std::cout << result << std::endl;
+34     std::cout << Rcpp::rnorm(2) << std::endl;
+35     
+36     //Creates a Tree instance using Tree<Node,0,int>: Node is the node structure to be used
+37     //as members of the tree\&. 0 sets the default member in the array "condition" inside
+38     //nodes\&. This can be reprogrammed by changing the definition of Node\&. int is the
+39     //type of the condition array inside node, ccan be int, unsigned int, float, double, long double,\&.\&.\&.
+40     //Node<1,int,0>: 1 is the size of array of conditions in each node, 1 meaning it only has one element
+41     // and so the default condition can only be the 0th member of the condition array\&.
+42     //int is the type and has to be the same as the one defined for Tree, this call can get packed into one function
+43     //or wrapper class to avoid repetitions\&.
+44     Tree<Node<1,int,0>,0,int> tree;
+45     
+46     //Preciosn of the numbers to be printed out
+47     tree\&.set_print_precision(1);
+48     
+49     //No print, or print on screen or print to Latex file, or a combination of Screen or Latex
+50     tree\&.set_output_format((print_format)(print_format::Screen | print_format::Latex));
+51     
+52     //adding nodes
+53     tree\&.add(2);
+54     tree\&.add(3);
+55     tree\&.add(4);
+56     tree\&.add(5);
+57     tree\&.add(1);
+58     tree\&.add(2);
+59     
+60     //prints the entire tree
+61     tree\&.print();
+62     
+63     //printing a portion of the tree
+64     tree\&.print(tree\&.find(3));
+65     
+66     //deleting a portion of the tree, here we find the first 3 under some conditions and delete what is beneath it
+67     tree\&.delete_branches(tree\&.find(3));
+68     
+69     //prints the entire tree
+70     tree\&.print();
+71     
+72     //adds a node starting from another node\&. here the find command returns the address of the node tha add command will
+73     //start the add process from it\&.
+74     tree\&.add(8, tree\&.find(3));
+75     
+76     //prints the entire tree
+77     tree\&.print();
+78     
+79     //deletes the tree instance
+80     tree\&.~Tree();
+81     
+82     //this how the deleted instance can be recycled to create a new instance after delete
+83     tree = *new Tree<Node<1,int,0>,0,int>;
+84     
+85     //Preciosn of the numbers to be printed out
+86     tree\&.set_print_precision(1);
+87     
+88     //No print, or print on screen or print to Latex file, or a combination of Screen or Latex
+89     tree\&.set_output_format((print_format)(print_format::Screen | print_format::Latex));
+90     
+91     //Growing tree members, rules can be changed
+92     for(int i=3;i<20;i++)
+93         tree\&.grow(i%10,3);
+94     
+95     //prints the entire tree
+96     tree\&.print();
+97     
+98     //deletes the tree instance
+99     tree\&.~Tree();
+100     
+101     std::cout << "End\&." << std::endl;
+102     
+103     return 0;
+104 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Rtree from the source code\&.

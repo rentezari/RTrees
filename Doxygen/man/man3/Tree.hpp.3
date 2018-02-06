@@ -1,0 +1,73 @@
+.TH "Tree.hpp" 3 "Sat Feb 11 2017" "Rtree" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Tree.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTree< Node, default_cond, condition_type >\fP"
+.br
+.RI "\fBTree\fP class: Class containing tree root and functions for modification and generation of tree\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBprint_format\fP { \fBNone\fP = 1 << 0, \fBScreen\fP = 1 << 1, \fBLatex\fP = 1 << 2 }
+.RI "\fBTree\&.hpp\fP\&. ""
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBprint_format\fP"
+
+.PP
+\fBTree\&.hpp\fP\&. RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&.print_format enum type\&. User passing output formats\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINone \fP\fP
+No print 
+.TP
+\fB\fIScreen \fP\fP
+Print \fBTree\fP on screen 
+.TP
+\fB\fILatex \fP\fP
+Print \fBTree\fP to Latex file 
+.PP
+.nf
+18              {
+19     None =   1 << 0,  
+20     Screen = 1 << 1,  
+21     Latex =  1 << 2   
+22 } print_format;
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Rtree from the source code\&.

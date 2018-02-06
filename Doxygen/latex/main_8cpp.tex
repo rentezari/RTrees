@@ -1,0 +1,121 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}main.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tree.\+cpp\char`\"{}}\newline
+{\ttfamily \#include $<$R\+Inside.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \hyperlink{main_8cpp}{main.\+cpp} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{main_8cpp}{main.\+cpp} 
+
+R\+Trees \begin{DoxyAuthor}{Author}
+Reihaneh Entezari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright © 2017 Reihaneh Entezari. All rights reserved. 
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+26 \{
+27     std::cout << \textcolor{stringliteral}{"Start..."} << std::endl;
+28     
+29     \textcolor{comment}{//For using R functions. It also seeds the random function for the rest of program.}
+30     RInside R;
+31     \textcolor{comment}{//For example:}
+32     Rcpp::NumericVector result = Rcpp::rnorm(2);
+33     std::cout << result << std::endl;
+34     std::cout << Rcpp::rnorm(2) << std::endl;
+35     
+36     \textcolor{comment}{//Creates a Tree instance using Tree<Node,0,int>: Node is the node structure to be used}
+37     \textcolor{comment}{//as members of the tree. 0 sets the default member in the array "condition" inside}
+38     \textcolor{comment}{//nodes. This can be reprogrammed by changing the definition of Node. int is the}
+39     \textcolor{comment}{//type of the condition array inside node, ccan be int, unsigned int, float, double, long double,...}
+40     \textcolor{comment}{//Node<1,int,0>: 1 is the size of array of conditions in each node, 1 meaning it only has one element}
+41     \textcolor{comment}{// and so the default condition can only be the 0th member of the condition array.}
+42     \textcolor{comment}{//int is the type and has to be the same as the one defined for Tree, this call can get packed into one
+       function}
+43     \textcolor{comment}{//or wrapper class to avoid repetitions.}
+44     \hyperlink{class_tree}{Tree<Node<1,int,0>},0,\textcolor{keywordtype}{int}> tree;
+45     
+46     \textcolor{comment}{//Preciosn of the numbers to be printed out}
+47     tree.\hyperlink{class_tree_a21f8cfc7ca1e7bd8fe8c33c94240449f}{set\_print\_precision}(1);
+48     
+49     \textcolor{comment}{//No print, or print on screen or print to Latex file, or a combination of Screen or Latex}
+50     tree.\hyperlink{class_tree_a8e176aced327c226e89a3790cb8f3d68}{set\_output\_format}((\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\_format})(
+      \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a2609fadb77bb3d98c615b41ac79a1d31}{print\_format::Screen} | \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a7a8b58d78c532f752dd1c5da89e254e7}{print\_format::Latex}));
+51     
+52     \textcolor{comment}{//adding nodes}
+53     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(2);
+54     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(3);
+55     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(4);
+56     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(5);
+57     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(1);
+58     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(2);
+59     
+60     \textcolor{comment}{//prints the entire tree}
+61     tree.\hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print}();
+62     
+63     \textcolor{comment}{//printing a portion of the tree}
+64     tree.\hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print}(tree.\hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(3));
+65     
+66     \textcolor{comment}{//deleting a portion of the tree, here we find the first 3 under some conditions and delete what is
+       beneath it}
+67     tree.\hyperlink{class_tree_ae78f42d798cdd24b3d5b24621b939468}{delete\_branches}(tree.\hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(3));
+68     
+69     \textcolor{comment}{//prints the entire tree}
+70     tree.\hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print}();
+71     
+72     \textcolor{comment}{//adds a node starting from another node. here the find command returns the address of the node tha add
+       command will}
+73     \textcolor{comment}{//start the add process from it.}
+74     tree.\hyperlink{class_tree_af8292ba7cef24827af0584b31cfc33a8}{add}(8, tree.\hyperlink{class_tree_a7ad01e2d8b572e6d1f97e0031214117a}{find}(3));
+75     
+76     \textcolor{comment}{//prints the entire tree}
+77     tree.\hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print}();
+78     
+79     \textcolor{comment}{//deletes the tree instance}
+80     tree.\hyperlink{class_tree_aa4d8eec83dea9da55071cdf181078119}{~Tree}();
+81     
+82     \textcolor{comment}{//this how the deleted instance can be recycled to create a new instance after delete}
+83     tree = *\textcolor{keyword}{new} \hyperlink{class_tree}{Tree<Node<1,int,0>},0,\textcolor{keywordtype}{int}>;
+84     
+85     \textcolor{comment}{//Preciosn of the numbers to be printed out}
+86     tree.\hyperlink{class_tree_a21f8cfc7ca1e7bd8fe8c33c94240449f}{set\_print\_precision}(1);
+87     
+88     \textcolor{comment}{//No print, or print on screen or print to Latex file, or a combination of Screen or Latex}
+89     tree.\hyperlink{class_tree_a8e176aced327c226e89a3790cb8f3d68}{set\_output\_format}((\hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996}{print\_format})(
+      \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a2609fadb77bb3d98c615b41ac79a1d31}{print\_format::Screen} | \hyperlink{_tree_8hpp_a73f5f76e6617ce240bad0b57b80be996a7a8b58d78c532f752dd1c5da89e254e7}{print\_format::Latex}));
+90     
+91     \textcolor{comment}{//Growing tree members, rules can be changed}
+92     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=3;i<20;i++)
+93         tree.\hyperlink{class_tree_ab05cd263b882d58cee3c671c6ba646fd}{grow}(i%10,3);
+94     
+95     \textcolor{comment}{//prints the entire tree}
+96     tree.\hyperlink{class_tree_ac4a139b22a1188e616efbd2919871959}{print}();
+97     
+98     \textcolor{comment}{//deletes the tree instance}
+99     tree.\hyperlink{class_tree_aa4d8eec83dea9da55071cdf181078119}{~Tree}();
+100     
+101     std::cout << \textcolor{stringliteral}{"End."} << std::endl;
+102     
+103     \textcolor{keywordflow}{return} 0;
+104 \}
+\end{DoxyCode}

@@ -1,0 +1,850 @@
+.TH "Tree< Node, default_cond, condition_type >" 3 "Sat Feb 11 2017" "Rtree" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Tree< Node, default_cond, condition_type > \- \fBTree\fP class: Class containing tree root and functions for modification and generation of tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Tree\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTree\fP ()"
+.br
+.RI "\fBTree\&.cpp\fP\&. "
+.ti -1c
+.RI "\fB~Tree\fP ()"
+.br
+.ti -1c
+.RI "void \fBadd\fP (condition_type condition)"
+.br
+.RI "\fBadd\&.cpp\fP "
+.ti -1c
+.RI "void \fBadd\fP (condition_type condition, \fBNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP (\fBNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBset_print_precision\fP (unsigned int _N_digits_printed)"
+.br
+.RI "\fBprint\&.cpp\fP "
+.ti -1c
+.RI "\fBNode\fP * \fBfind\fP (condition_type value)"
+.br
+.ti -1c
+.RI "void \fBgrow\fP (condition_type j, condition_type j_bar)"
+.br
+.RI "\fBgrow\&.cpp\fP "
+.ti -1c
+.RI "void \fBgrow\fP (\fBNode\fP *node, condition_type j, condition_type j_bar)"
+.br
+.ti -1c
+.RI "void \fBdelete_branches\fP (\fBNode\fP *node)"
+.br
+.RI "deleter\&.cpp "
+.ti -1c
+.RI "void \fBset_output_format\fP (\fBprint_format\fP _output_format)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBadd\fP (condition_type condition, unsigned int level, \fBNode\fP *node)"
+.br
+.ti -1c
+.RI "unsigned int \fBcount_levels\fP (\fBNode\fP *node, unsigned int max_level)"
+.br
+.RI "\fBcount\&.cpp\fP "
+.ti -1c
+.RI "void \fBprint_branch\fP (\fBNode\fP *node)"
+.br
+.ti -1c
+.RI "void \fBprint_Latex_begin\fP (std::ofstream *Latex_print_file)"
+.br
+.ti -1c
+.RI "void \fBprint_Latex_branch\fP (\fBNode\fP *node, std::ofstream *Latex_print_file)"
+.br
+.ti -1c
+.RI "void \fBprint_Latex_end\fP (std::ofstream *Latex_print_file)"
+.br
+.ti -1c
+.RI "void \fBprint_a_level\fP (unsigned int level, unsigned int max_level, \fBNode\fP *node)"
+.br
+.ti -1c
+.RI "\fBNode\fP * \fBfind\fP (\fBNode\fP *node, condition_type value)"
+.br
+.RI "\fBfind\&.cpp\fP "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBNode\fP * \fBroot\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBN_digits_printed\fP"
+.br
+.ti -1c
+.RI "\fBprint_format\fP \fBoutput_format\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Node, unsigned int default_cond, typename condition_type>
+.br
+class Tree< Node, default_cond, condition_type >"
+\fBTree\fP class: Class containing tree root and functions for modification and generation of tree\&. 
+
+Usage: Use \fCTree<Node,0,int>\fP\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI\fBNode\fP\fP Defined the node types\&. 
+.br
+\fIdefault_cond\fP The default condition in the array of conditions\&. 
+.br
+\fIcondition_type\fP Type of the condition array and values, i\&.e\&., int, float, double, \&.\&.\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > \fBTree\fP< \fBNode\fP, default_cond, condition_type >::\fBTree\fP ()"
+
+.PP
+\fBTree\&.cpp\fP\&. Class constrcutor: Sets \fCroot\fP to NULL\&.
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+22 {
+23     root = NULL;
+24     N_digits_printed = 1;
+25     output_format = None;
+26 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > \fBTree\fP< \fBNode\fP, default_cond, condition_type >::~\fBTree\fP ()"
+Class destructor: Removes all branches and resets \fCroot\fP to NULL\&. 
+.PP
+.nf
+30 {
+31     if(root!=NULL)
+32     {
+33         delete_branches(root);
+34         delete root;
+35         root = NULL;
+36     }
+37 }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::add (condition_type condition)"
+
+.PP
+\fBadd\&.cpp\fP Add Function I: Adds tree nodes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcondition\fP Value of the condition\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+16 {
+17     if(root!=NULL)
+18         add(condition, 0, root);
+19     else
+20     {
+21         root=new Node;
+22         *root = condition;
+23         root->level = 0;
+24     }
+25 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::add (condition_type condition, \fBNode\fP * node)"
+Add Function II: Adds tree nodes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcondition\fP Value of the condition\&. 
+.br
+\fInode\fP A node in the tree\&. 
+.RE
+.PP
+
+.PP
+.nf
+29 {
+30     if(node!=NULL)
+31     {
+32         add(condition, node->level, node);
+33     }
+34     else
+35     {
+36         std::cout << "Add: NULL Input!" << std::endl;
+37     }
+38 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::add (condition_type condition, unsigned int level, \fBNode\fP * node)\fC [private]\fP"
+Add Function III: Adds tree nodes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcondition\fP Value of the condition\&. 
+.br
+\fIlevel\fP Integer showing the level at which the new node is being added\&. 
+.br
+\fInode\fP A node in the tree\&. 
+.RE
+.PP
+
+.PP
+.nf
+42 {
+43     if(node!=NULL)
+44     {
+45         if (*node <= condition)
+46         {
+47             if(node->Right!=NULL)
+48             {
+49                 add(condition, level+1, node->Right);
+50             }
+51             else
+52             {
+53                 node->Right = new Node;
+54                 *(node->Right) = condition;
+55                 node->Right->level = level+1;
+56             }
+57         }
+58         else
+59         {
+60             if(node->Left!=NULL)
+61             {
+62                 add(condition, level+1, node->Right);
+63             }
+64             else
+65             {
+66                 node->Left = new Node;
+67                 *(node->Left) = condition;
+68                 node->Left->level = level+1;
+69             }
+70         }
+71     }
+72     else
+73     {
+74         std::cout << "Add: NULL Input!" << std::endl;
+75     }
+76 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > unsigned int \fBTree\fP< \fBNode\fP, default_cond, condition_type >::count_levels (\fBNode\fP * node, unsigned int max_level)\fC [private]\fP"
+
+.PP
+\fBcount\&.cpp\fP Counts level below a node\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP A node in the tree\&. 
+.br
+\fImax_level\fP The value of maximum level number found so far\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the maximum level value found below the branch the function was called upon\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+15 {
+16     max_level = std::max(max_level, node->level);
+17     
+18     if(node->Left!=NULL)
+19         max_level = std::max(max_level, count_levels(node->Left, max_level));
+20     
+21     if(node->Right!=NULL)
+22         max_level = std::max(max_level, count_levels(node->Right, max_level));
+23     
+24     return (max_level);
+25 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::delete_branches (\fBNode\fP * node)"
+
+.PP
+deleter\&.cpp Deletes branches below a specific node\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP Branches below this node will be deleted (this node itself is not deleted)\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+16 {
+17     if(node!=NULL)
+18     {
+19         if(node->Left!=NULL)
+20         {
+21             delete_branches(node->Left);
+22             node->Left=NULL;
+23         }
+24         
+25         if(node->Right!=NULL)
+26         {
+27             delete_branches(node->Right);
+28             node->Right=NULL;
+29         }
+30     }
+31 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > \fBNode\fP * \fBTree\fP< \fBNode\fP, default_cond, condition_type >::find (condition_type value)"
+Finds the first node that matches the condition\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The condition value to be found in the nodes\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The address to the node with matching condition\&. 
+.RE
+.PP
+
+.PP
+.nf
+31 {
+32     if(root!=NULL)
+33     {
+34         if(*root == value)
+35             return root;
+36         if (*root < value)
+37             return find(root->Right, value);
+38         else
+39             return find(root->Left, value);
+40     }
+41     return NULL;
+42 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > \fBNode\fP * \fBTree\fP< \fBNode\fP, default_cond, condition_type >::find (\fBNode\fP * node, condition_type value)\fC [private]\fP"
+
+.PP
+\fBfind\&.cpp\fP Private function called by public find function\&. Finds the first node matching to the condition\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP A node in the tree\&. 
+.br
+\fIvalue\fP The condition value to be found in the nodes\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The address to the node with matching condition\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+16 {
+17     if(node!=NULL)
+18     {
+19         if(*node == value)
+20             return node;
+21         if (*node < value)
+22             return find(node->Right, value);
+23         else
+24             return find(node->Left, value);
+25     }
+26     return NULL;
+27 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::grow (condition_type j, condition_type j_bar)"
+
+.PP
+\fBgrow\&.cpp\fP Grow function I: Grows branches by adding a new node using random paths\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIj\fP The condition value to be added as a new node\&. 
+.br
+\fIj_bar\fP The deciding condition\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+16 {
+17     if(root!=NULL)
+18         grow(root, j, j_bar);
+19     else
+20     {
+21         root=new Node;
+22         *root = j;
+23         root->level = 0;
+24     }
+25 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::grow (\fBNode\fP * node, condition_type j, condition_type j_bar)"
+Grow function II: Grows branches by adding a new node using random paths\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP Defines the starting point the grow process\&. 
+.br
+\fIj\fP The condition value to be added as a new node\&. 
+.br
+\fIj_bar\fP The deciding condition\&. 
+.RE
+.PP
+
+.PP
+.nf
+29 {
+30     if(rand() % 2)
+31     {
+32         if(node->Right!=NULL)
+33         {
+34             grow(node->Right, j, j_bar);
+35         }
+36         else
+37         {
+38             node->Right = new Node;
+39             *(node->Right) = j;
+40             node->Right->level = node->level+1;
+41         }
+42     }
+43     else
+44     {
+45         if(node->Left!=NULL)
+46         {
+47             grow(node->Left, j, j_bar);
+48         }
+49         else
+50         {
+51             node->Left = new Node;
+52             *(node->Left) = j;
+53             node->Left->level = node->level+1;
+54         }
+55     }
+56 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print ()"
+Print function I: Prints entire tree starting from the \fCroot\fP\&. 
+.PP
+.nf
+33 {
+34     if(output_format & Screen)
+35         print_branch(root);
+36     
+37     if(output_format & Latex)
+38     {
+39         std::cout << "Writing Latex file: Latex_print\&.tex\&.\&.\&.";
+40         std::ofstream Latex_print_file ("Latex_print\&.tex");
+41         print_Latex_begin(&Latex_print_file);
+42         print_Latex_branch(root, &Latex_print_file);
+43         print_Latex_end(&Latex_print_file);
+44         Latex_print_file\&.close();
+45         std::cout << "   Done\&." << std::endl;
+46     }
+47 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print (\fBNode\fP * node)"
+Print function II: Prints all branches below a node\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP A node in the tree\&. 
+.RE
+.PP
+
+.PP
+.nf
+51 {
+52     if(output_format & Screen)
+53         print_branch(node);
+54     
+55     if(output_format & Latex)
+56     {
+57         std::cout << "Writing Latex file: Latex_print\&.tex\&.\&.\&.";
+58         std::ofstream Latex_print_file ("Latex_print\&.tex");
+59         print_Latex_begin(&Latex_print_file);
+60         print_Latex_branch(node, &Latex_print_file);
+61         print_Latex_end(&Latex_print_file);
+62         Latex_print_file\&.close();
+63         std::cout << "   Done\&." << std::endl;
+64     }
+65 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print_a_level (unsigned int level, unsigned int max_level, \fBNode\fP * node)\fC [private]\fP"
+Private function called by private function print_branch\&. Prints all nodes that are located on the same level\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP The level that is being printed\&. 
+.br
+\fInode\fP A node in the tree\&. 
+.br
+\fImax_level\fP Maximum level number\&. 
+.RE
+.PP
+
+.PP
+.nf
+122 {
+123     if(node->level==level)
+124     {
+125         std::cout << node->condition[default_cond];
+126         for(int j=0; j<(pow(2,(max_level-level+1))-1); j++)
+127             for(int k=0; k<N_digits_printed; k++)
+128                 std::cout << " ";
+129     }
+130     
+131     if(node->Left!=NULL)
+132         print_a_level(level, max_level, node->Left);
+133     else if(node->level<=level-1 && level>0)
+134         for(int i=0; i< pow(2,(level-node->level-1)); i++)
+135         {
+136             for(int k=0; k<N_digits_printed/2; k++)
+137                 std::cout << " ";
+138             std::cout << "N";
+139             for(int k=0; k<N_digits_printed/2; k++)
+140                 std::cout << " ";
+141             for(int j=0; j<(pow(2,(max_level-level+1))-1); j++)
+142                 for(int k=0; k<N_digits_printed; k++)
+143                     std::cout << " ";
+144         }
+145     
+146     if(node->Right!=NULL)
+147         print_a_level(level, max_level, node->Right);
+148     else if(node->level<=level-1 && level>0)
+149         for(int i=0; i< pow(2,(level-node->level-1)); i++)
+150         {
+151             for(int k=0; k<N_digits_printed/2; k++)
+152                 std::cout << " ";
+153             std::cout << "N";
+154             for(int k=0; k<N_digits_printed/2; k++)
+155                 std::cout << " ";
+156             for(int j=0; j<(pow(2,(max_level-level+1))-1); j++)
+157                 for(int k=0; k<N_digits_printed; k++)
+158                     std::cout << " ";
+159         }
+160 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print_branch (\fBNode\fP * node)\fC [private]\fP"
+Private function called by public print functions\&. Prints branches below a node\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP A node in the tree\&. 
+.RE
+.PP
+
+.PP
+.nf
+164 {
+165     if(node!=NULL)
+166     {
+167         unsigned int max_level = 0;
+168         unsigned int local_level = node->level;
+169         max_level = count_levels(node, max_level);
+170         std::cout << "Levels: " << max_level-local_level+1 << std::endl;
+171         
+172         for(unsigned int i=local_level; i<=max_level; i++)
+173         {
+174             for(int j=0; j<=(pow(2,(max_level-i))-1); j++)
+175                 for(int k=0; k<N_digits_printed; k++)
+176                     std::cout << " ";
+177             print_a_level(i, max_level, node);
+178             std::cout << std::endl;
+179             
+180             if(i!=max_level)
+181             {
+182                 for(int j=0; j<=(pow(2,(max_level-i)) - int(pow(2,(max_level-i-1))-1)/2 -2); j++)
+183                     for(int k=0; k<N_digits_printed; k++)
+184                         std::cout << " ";
+185                 for(int j=0; j<pow(2,(i-local_level)); j++)
+186                 {
+187                     for(int k=0; k<N_digits_printed/2; k++)
+188                         std::cout << " ";
+189                     std::cout << "/";
+190                     for(int k=0; k<N_digits_printed/2; k++)
+191                         std::cout << " ";
+192                     for(int j=0; j<(int(pow(2,(max_level-i-1))-1)+(i==max_level-1)); j++)
+193                         for(int k=0; k<N_digits_printed; k++)
+194                             std::cout << " ";
+195                     for(int k=0; k<N_digits_printed/2; k++)
+196                         std::cout << " ";
+197                     std::cout << "\\";
+198                     for(int k=0; k<N_digits_printed/2; k++)
+199                         std::cout << " ";
+200                     for(int j=0; j<(pow(2,(max_level-i+1)) - int(pow(2,(max_level-i-1+1))-1)/2 -2-(i==max_level-1)); j++)
+201                         for(int k=0; k<N_digits_printed; k++)
+202                             std::cout << " ";
+203                 }
+204                 std::cout << std::endl;
+205             }
+206         }
+207     }else
+208         std::cout << "Print: Nothing to print! (NULL node)" << std::endl;
+209 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print_Latex_begin (std::ofstream * Latex_print_file)\fC [private]\fP"
+Initiates the Latex file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fILatex_print_file\fP Pointer to opened file\&. 
+.RE
+.PP
+
+.PP
+.nf
+69 {
+70     if ((*Latex_print_file)\&.is_open())
+71     {
+72         *Latex_print_file << "\\documentclass[landscape]{article}\\usepackage{tikz-qtree}\\tikzset{every tree node/\&.style={minimum width=2em,draw,circle},blank/\&.style={draw=none},edge from parent/\&.style={draw, edge from parent path={(\\tikzparentnode) -- (\\tikzchildnode)}}}\\begin{document}\\begin{center}\\resizebox{\\textheight}{!}{\\begin{tikzpicture}\\Tree" << std::endl;;
+73     }
+74     else
+75         std::cout << "Unable to write to Latex_print\&.tex" << std::endl;
+76     
+77 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print_Latex_branch (\fBNode\fP * node, std::ofstream * Latex_print_file)\fC [private]\fP"
+Prints all branches below a node into the Latex file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP A node in the tree\&. 
+.br
+\fILatex_print_file\fP Pointer to opened file\&. 
+.RE
+.PP
+
+.PP
+.nf
+93 {
+94     *Latex_print_file << "[";
+95     
+96     if(node!=NULL)
+97     {
+98         *Latex_print_file << "\&." << node->condition[default_cond] << " ";
+99         
+100         if(node->Left!=NULL)
+101         {
+102             print_Latex_branch(node->Left, Latex_print_file);
+103         }
+104         else
+105             *Latex_print_file << "N ";
+106         
+107         if(node->Right!=NULL)
+108         {
+109             print_Latex_branch(node->Right, Latex_print_file);
+110         }
+111         else
+112             *Latex_print_file << "N ";
+113     }
+114     else
+115         *Latex_print_file << "N ";
+116     
+117     *Latex_print_file << "]";
+118 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::print_Latex_end (std::ofstream * Latex_print_file)\fC [private]\fP"
+Closes the Latex file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fILatex_print_file\fP Pointer to opened file\&. 
+.RE
+.PP
+
+.PP
+.nf
+81 {
+82     if ((*Latex_print_file)\&.is_open())
+83     {
+84         *Latex_print_file << "\\end{tikzpicture}}\\end{center}\\end{document}" << std::endl;;
+85     }
+86     else
+87         std::cout << "Unable to write to Latex_print\&.tex" << std::endl;
+88     
+89 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::set_output_format (\fBprint_format\fP _output_format)"
+Sets the format of the output to none, or on screen, or in Latex, or both\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_output_format\fP Format of the output chosen from print_format \fCenum\fP\&. 
+.RE
+.PP
+
+.PP
+.nf
+27 {
+28     output_format = _output_format;
+29 }
+.fi
+.SS "template<typename Node , unsigned int default_cond, typename condition_type > void \fBTree\fP< \fBNode\fP, default_cond, condition_type >::set_print_precision (unsigned int _N_digits_printed)"
+
+.PP
+\fBprint\&.cpp\fP Changes the value for the number of decimal points to be printed\&. by the std::cout functions\&. Also controls the spaces in tree branch visualizations\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_N_digits_printed\fP User input for the number of decimal points to be printed\&.
+.RE
+.PP
+RTrees 
+.PP
+\fBAuthor:\fP
+.RS 4
+Reihaneh Entezari 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2017 
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright © 2017 Reihaneh Entezari\&. All rights reserved\&. 
+.RE
+.PP
+
+.PP
+.nf
+19 {
+20     N_digits_printed = _N_digits_printed;
+21     std::cout << std::fixed;
+22     std::cout << std::setprecision(N_digits_printed);
+23 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename Node, unsigned int default_cond, typename condition_type> unsigned int \fBTree\fP< \fBNode\fP, default_cond, condition_type >::N_digits_printed\fC [private]\fP"
+Number of decimal points to be printed, default is 1\&. 
+.SS "template<typename Node, unsigned int default_cond, typename condition_type> \fBprint_format\fP \fBTree\fP< \fBNode\fP, default_cond, condition_type >::output_format\fC [private]\fP"
+
+.SS "template<typename Node, unsigned int default_cond, typename condition_type> \fBNode\fP* \fBTree\fP< \fBNode\fP, default_cond, condition_type >::root\fC [private]\fP"
+The root of the tree, lowest node and located at level 0 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Rtree from the source code\&.
